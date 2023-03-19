@@ -6,14 +6,14 @@ def build_heap(data):
     n=len(data)
     
     for i in range(n//2,-1,-1):
-        sm_data(data,swaps,n,i)
+        sm_data(data,swaps,i)
    
     return swaps
 
-def sm_data(data, swaps, n, i):
+def sm_data(data,swaps,i):
     n=len(data)
-    left_n=2*i*2
-    right_n=2*i+1
+    left_n=2*i+1
+    right_n=2*i+2
     smallest_n=i
     if left_n<n and data[left_n]<data[smallest_n]:
         smallest_n=left_n
@@ -22,7 +22,7 @@ def sm_data(data, swaps, n, i):
     if smallest_n !=i:
         swaps.append((i,smallest_n))
         data[i],data[smallest_n]=data[smallest_n],data[i]
-        sm_data(data,swaps,n,smallest_n)
+        sm_data(data,swaps,smallest_n)
     
 
 def main():
