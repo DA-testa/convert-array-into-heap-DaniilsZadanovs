@@ -38,7 +38,7 @@ def main():
     elif "F" in in_num:
         file_name=input()
         if "a" not in file_name:
-            with open('/tests/'+file_name,'r') as f:
+            with open('./tests/'+file_name,'r') as f:
                 n=int(f.readline())
                 data=list(map(int,f.readline().split()))
                           
