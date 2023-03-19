@@ -7,9 +7,7 @@ def build_heap(data):
     
     for i in range(n//2,-1,-1):
         sm_data(data,swaps,n,i)
-    # TODO: Creat heap and heap sort
-    # try to achieve  O(n) and not O(n2)
-
+   
     return swaps
 
 def sm_data(data, swaps, n, i):
@@ -32,12 +30,19 @@ def main():
     # TODO : add input and corresponding checks
     # add another input for I or F 
     # first two tests are from keyboard, third test is from a file
-
-
-    # input from keyboard
-    n = int(input())
-    data = list(map(int, input().split()))
-
+    in_num=input()
+    
+    if "I" in in_num:
+        n=int(input())
+        data = list(map(int, input().split()))
+    elif "F" in in_num:
+        file_name=input()
+        if "a" not in file_name:
+            with open('/tests/'+file_name,'r') as f:
+                n=int(f.readline())
+                data=list(map(int,f.readline().split())
+                          
+        
     # checks if lenght of data is the same as the said lenght
     assert len(data) == n
 
@@ -48,7 +53,9 @@ def main():
     # TODO: output how many swaps were made, 
     # this number should be less than 4n (less than 4*len(data))
 
-
+    assert(len(swaps)<=4*n
+    print(len(swaps))
+           
     # output all swaps
     print(len(swaps))
     for i, j in swaps:
